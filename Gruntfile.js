@@ -10,18 +10,19 @@ module.exports = function(grunt) {
 			css: {
 				files: [
 					'src/sass/*.scss',
+					'src/sass/libs/*.scss',
 				],
 				tasks: ['compass']
 			},
 			js: {
 				files: [
-					'src/js/*.js',
+					'src/js/*.js'
 				],
 				tasks: ['jshint', 'uglify']
 			},
 			html: {
 				files: [
-					'src/html/*.html',
+					'src/html/*.html'
 				],
 				tasks: ['copy:html']
 			}
@@ -69,7 +70,7 @@ module.exports = function(grunt) {
 			scripts: {
 				files: {
 					'dist/js/scripts.js': [
-						'src/js/libs/all.js', 
+						'src/js/libs.js', 
 						'src/js/main.js'
 					]
 				}
@@ -155,6 +156,7 @@ module.exports = function(grunt) {
 				]
 			}
 		}
+		
 	});
 
 	// Load the Grunt plugins.
