@@ -18,6 +18,12 @@ module.exports = function(grunt) {
 					'src/js/*.js',
 				],
 				tasks: ['jshint', 'uglify']
+			},
+			html: {
+				files: [
+					'src/html/*.html',
+				],
+				tasks: ['copy:html']
 			}
 		},
 
@@ -93,18 +99,11 @@ module.exports = function(grunt) {
 							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
 							return path.join(dest, matchedSrcPath);
 						}
-					},
-					{
-						expand: true,
-						src: ['src/html/**'],
-						replacement: 'src/html/',
-						dest: 'dist/',
-						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
-					},
+					}
+				]
+			},
+			fonts: {
+				files:[
 					{
 						expand: true,
 						src: ['src/fonts/**'],
@@ -138,6 +137,21 @@ module.exports = function(grunt) {
 							return path.join(dest, matchedSrcPath);
 						}
 					}
+				]
+			},
+			html: {
+				files:[
+					{
+						expand: true,
+						src: ['src/html/**'],
+						replacement: 'src/html/',
+						dest: 'dist/',
+						filter: 'isFile',
+						rename:function(dest, matchedSrcPath, options){
+							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
+							return path.join(dest, matchedSrcPath);
+						}
+					} 
 				]
 			}
 		}
