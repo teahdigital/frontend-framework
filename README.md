@@ -1,4 +1,27 @@
-# Prototype Framework V1.1 (*Framework CSS + JS*)
+# Prototype Framework V2.0 (*Framework HTML5 + CSS3 + JS*)
+
+This Framework requires some libraries
+
+1. Grunt
+3. Bower
+2. Compass
+
+
+## For install run the followwing commands
+
+```shell
+npm install
+bower install
+grunt
+```
+
+## Credits
+
+* Grunt
+    http://gruntjs.com/
+
+* Bower
+    http://bower.io/
 
 * SCSS
 	http://sass-lang.com/
@@ -11,9 +34,6 @@
 
 * jQuery
 	https://jquery.com/
-
-* Gulp
-    http://gulpjs.com/
 
 * Owl Carousel
 	http://owlgraphic.com/owlcarousel/

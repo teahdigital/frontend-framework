@@ -1,0 +1,17 @@
+{
+  "name": "template",
+  "version": "2.0.0",
+  "description": "Prototype Framework",
+  "authors": [
+    "Víctor Araya Jiménez",
+    "Luis Diego Solano"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "components-font-awesome": "~4.3.0",
+    "OwlCarouselBower": "~1.3.4"
+  }
+}
