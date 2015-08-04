@@ -9,7 +9,7 @@
 		init:function(){
 			this._construct();
 			this.bindEvents();
-			
+
 			console.log("ready");
 		},
 
@@ -25,7 +25,7 @@
 
 		// custom functions
 		styles:function(){
-			this.$main.css({ height: this.wh }); 
+
 		},
 
 		//events section
