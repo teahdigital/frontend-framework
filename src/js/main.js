@@ -35,10 +35,12 @@
 		}, 
 
 		resize:function(){
-			this.wh = $(window).height();
-			this.ww = $(window).width();
+			var self = App;
 
-			this.styles();
+			self.wh = $(window).height();
+			self.ww = $(window).width();
+			
+			self.styles();
 		}
 	};
 

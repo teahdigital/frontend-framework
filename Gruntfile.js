@@ -1,5 +1,10 @@
 var path = require('path');
 
+function renameCopyPath(dest, matchedSrcPath, options){
+	matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
+	return path.join(dest, matchedSrcPath);
+}
+
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -48,7 +53,8 @@ module.exports = function(grunt) {
 					'src/js/libs.js':[
 						'bower_components/jquery/dist/jquery.min.js',
             			'bower_components/bootstrap/dist/js/bootstrap.min.js',
-            			'bower_components/OwlCarouselBower/owl-carousel/owl.carousel.min.js'
+            			'bower_components/OwlCarouselBower/owl-carousel/owl.carousel.min.js',
+            			'bower_components/retina.js/dist/retina.min.js'
 					]
 				}
 			},
@@ -96,10 +102,7 @@ module.exports = function(grunt) {
 						replacement: 'src/images/',
 						dest: 'dist/images/',
 						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
+						rename: renameCopyPath
 					}
 				]
 			},
@@ -111,10 +114,7 @@ module.exports = function(grunt) {
 						replacement: 'src/fonts/',
 						dest: 'dist/fonts/',
 						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
+						rename: renameCopyPath
 					},
 					{
 						expand: true,
@@ -122,10 +122,7 @@ module.exports = function(grunt) {
 						replacement: 'bower_components/bootstrap/dist/fonts/',
 						dest: 'dist/fonts/',
 						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
+						rename: renameCopyPath
 					},
 					{
 						expand: true,
@@ -133,10 +130,7 @@ module.exports = function(grunt) {
 						replacement: 'bower_components/components-font-awesome/fonts/',
 						dest: 'dist/fonts/',
 						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
+						rename: renameCopyPath
 					}
 				]
 			},
@@ -148,10 +142,7 @@ module.exports = function(grunt) {
 						replacement: 'src/html/',
 						dest: 'dist/',
 						filter: 'isFile',
-						rename:function(dest, matchedSrcPath, options){
-							matchedSrcPath = matchedSrcPath.replace(options.replacement, '');
-							return path.join(dest, matchedSrcPath);
-						}
+						rename: renameCopyPath
 					} 
 				]
 			}
