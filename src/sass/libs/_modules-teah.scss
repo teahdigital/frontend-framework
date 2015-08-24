@@ -108,6 +108,19 @@
   }
 }
 
+.spinner-animate{
+  @include animation(spinner-animate linear 1s infinite );
+}
+
+@include keyframes(spinner-animate){
+  from{
+    @include transform(rotate(0deg)); 
+  }
+  to{
+    @include transform(rotate(360deg));  
+  }
+}
+
 div[class*="space-"]{
   display: block;
   width: 100%;

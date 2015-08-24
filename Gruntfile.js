@@ -27,9 +27,27 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [
-					'src/html/*.html'
+					'src/html/**'
 				],
 				tasks: ['copy:html']
+			},
+			php: {
+				files: [
+					'src/php/**'
+				],
+				tasks: ['copy:php']
+			},
+			images: {
+				files: [
+					'src/images/**'
+				],
+				tasks: ['copy:images']
+			},
+			fonts: {
+				files: [
+					'src/fonts/**'
+				],
+				tasks: ['copy:fonts']
 			}
 		},
 
@@ -103,6 +121,14 @@ module.exports = function(grunt) {
 						dest: 'dist/images/',
 						filter: 'isFile',
 						rename: renameCopyPath
+					},
+					{
+						expand: true,
+						src: ['bower_components/OwlCarouselBower/owl-carousel/*.png'],
+						replacement: 'bower_components/OwlCarouselBower/owl-carousel/',
+						dest: 'dist/css/',
+						filter: 'isFile',
+						rename: renameCopyPath
 					}
 				]
 			},
@@ -140,6 +166,18 @@ module.exports = function(grunt) {
 						expand: true,
 						src: ['src/html/**'],
 						replacement: 'src/html/',
+						dest: 'dist/',
+						filter: 'isFile',
+						rename: renameCopyPath
+					} 
+				]
+			},
+			php: {
+				files:[
+					{
+						expand: true,
+						src: ['src/php/**'],
+						replacement: 'src/php/',
 						dest: 'dist/',
 						filter: 'isFile',
 						rename: renameCopyPath
